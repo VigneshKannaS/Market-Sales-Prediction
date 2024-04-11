@@ -1,1 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Market Sales Prediction Model</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+  <header class="header">
+    <nav class="navbar">
+    </nav>
+</header>
+  <div class="background"></div>
+  <div class="container">
+  <div class="heading">
+    <h1 style="text-align:center; margin-top:10px">Market Sales Prediction Model</h1>
+    <form method="POST" action="/predict">
+  </div>
+    <div class="inputs">
+        <label for="Item_Identifier" class="form-label">Item Identifier :  </label>
+        <input type="text" class="form-control" id="itemIdentifier" name="itemIdentifier" required>
 
+        <label for="Item_Weight" class="form-label">Item Weight  : </label>
+        <input type="text" class="form-control" id="itemWeight" name="itemWeight" required>
+
+        <label for="Item_Fat_Content" class="form-label">Item FatContent : </label>
+        <input type="text" class="form-control" id="itemFatContent" name="itemFatContent" required>
+
+        <label for="Item_Visibility" class="form-label">Item Visibility :</label>
+        <input type="text" class="form-control" id="itemVisibility" name="itemVisibility" required>
+
+        <label for="Item_Type" class="form-label">Item Type : </label>
+        <input type="text" class="form-control" id="itemType" name="itemType" required>
+
+        <label for="Item_MRP" class="form-label">Item MRP  :</label>
+        <input type="text" class="form-control" id="itemMRP" name="itemMRP" required>
+
+        <label for="Outlet_Identifier" class="form-label">Outlet Identifier : </label>
+        <input type="text" class="form-control" id="outletIdentifier" name="outletIdentifier" required>
+
+        <label for="Outlet_Establishment_Year" class="form-label">Outlet Establishment Year  :</label>
+        <input type="text" class="form-control" id="outletEstablishmentYear" name="outletEstablishmentYear" required>
+
+        <label for="Outlet_Size" class="form-label">Outlet Size : </label>
+        <input type="text" class="form-control" id="outletSize" name="outletSize" required>
+
+        <label for="Outlet_Location_Type" class="form-label">Outlet LocationType : </label>
+        <input type="text" class="form-control" id="outletLocationType" name="outletLocationType" required>
+
+        <label for="Outlet_Type" class="form-label">Outlet Type:</label>
+        <input type="text" class="form-control" id="outletType" name="outletType" required>
+      </div>
+      <button type="submit" class="btn btn-primary">estimate</button>
+    </form>
+    {% if predictionText %}
+      <p style="background: black;color: white;margin-top:20px">{{ predictionText }}</p>
+    {% endif %}
+  </div>
+  </body>
+</html>
